@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: #333;
+}
+.card{
+    position: relative;
+    width: 350px;
+    height: 190px;
+    background: #333;
+    transition: 0.5s;
+}
+.card:hover{
+    height: 450px;
+}
+.card .line{
+   position: absolute;
+   inset:0;
+   background: #000;
+   overflow: hidden;
+}
+.card .line::before{
+    content: '';
+    left:50%;
+    top: 50%;
+    position: absolute;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent, #45f3ff,
+    #45f3ff,#45f3ff,transparent);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+.card .line::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.card .imgbx{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translateX(-50%);
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}
+.card:hover .imgbx{
+    width: 250px;
+    height: 250px;
+}
+.card .imgbx::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50px);
+    background: linear-gradient(transparent,#ff3c7b,
+    #ff3c7b,#ff3c7b,transparent);
+    animation: animate2 6s linear infinite;
+}
+@keyframes animate2{
+    0%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+.card .imgbx::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.card .imgbx img{
+    position: absolute;
+    object-fit: cover;
+    width:90%;
+    height:90%;
+    left: 5%;
+    top: 5%;
+    z-index: 1;
+    filter: grayscale(1);
+}
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    overflow: hidden;
+}
+.card .content .detail{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+}
+.card:hover .content .detail{
+    transform: translateY(0px);
+}
+.card .content .detail h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #45f3ff;
+}
+.card .content .detail h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #fff;
+}
+.card .content .detail .data{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.card .content .detail .data h3{
+    font-size: 1em;
+    color: #45f3ff;
+    line-height: 1.2em;
+    font-weight: 600;
+}
+.card .content .detail .data h3 span{
+    font-size: 0.85em;
+    font-weight: 400;
+    color: #fff;
+}
+.card .content .detail .actionbtn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.card .content .detail .actionbtn button{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background: #45f3ff;
+    color: #222;
+    cursor: pointer;
+    opacity: 0.9 ;
+}
+.card .content .detail .actionbtn button:nth-child(2){
+    background: #fff;
+}
+.card .content .detail .actionbtn button:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
